@@ -1,5 +1,5 @@
 resource "aviatrix_site2cloud" "prod_onprem_s2c" {
-  vpc_id                     = "production-vpc~-~bwibowo-01"
+  vpc_id                     = "${module.gcp_prod_vpc.network_name}~-~${var.gcp_project_id}"
   connection_name            = "prod_onprem_s2c"
   connection_type            = "mapped"
   remote_gateway_type        = "generic"
